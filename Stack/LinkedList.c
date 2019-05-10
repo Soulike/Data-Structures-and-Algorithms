@@ -22,22 +22,22 @@ Node *createNode(int data)
     return newNode;
 }
 
-int getData(Node *node)
+int getDataOfNode(Node *node)
 {
     return node->data;
 }
 
-void setData(Node *node, int data)
+void setDataOfNode(Node *node, int data)
 {
     node->data = data;
 }
 
-Node *getNext(Node *node)
+Node *getNextOfNode(Node *node)
 {
     return node->next;
 }
 
-LinkedList *create()
+LinkedList *createLinkedList()
 {
     LinkedList *newList = (LinkedList *)malloc(sizeof(LinkedList));
     newList->head = NULL;
@@ -46,7 +46,7 @@ LinkedList *create()
     return newList;
 }
 
-void destroy(LinkedList *list)
+void destroyLinkedList(LinkedList *list)
 {
     Node *nodeBefore = list->head;
     Node *nextNode = NULL;
@@ -59,22 +59,22 @@ void destroy(LinkedList *list)
     free(list);
 }
 
-Node *getHead(LinkedList *list)
+Node *getHeadOfLinkedList(LinkedList *list)
 {
     return list->head;
 }
 
-Node *getRear(LinkedList *list)
+Node *getRearOfLinkedList(LinkedList *list)
 {
     return list->rear;
 }
 
-unsigned long long getLength(LinkedList *list)
+unsigned long long getLengthOfLinkedList(LinkedList *list)
 {
     return list->length;
 }
 
-void insert(LinkedList *list, Node *nodeBefore, Node *newNode)
+void insertIntoLinkedList(LinkedList *list, Node *nodeBefore, Node *newNode)
 {
     if (nodeBefore == NULL) // 如果之前参照节点是 NULL，就插入成为 head
     {
@@ -94,7 +94,7 @@ void insert(LinkedList *list, Node *nodeBefore, Node *newNode)
     list->length++;
 }
 
-void delete (LinkedList *list, Node *node)
+void deleteFromLinkedList(LinkedList *list, Node *node)
 {
     if (node == list->head)
     {
@@ -122,13 +122,13 @@ void delete (LinkedList *list, Node *node)
     }
 }
 
-void replace(LinkedList *list, Node *oldNode, Node *newNode)
+void replaceFromLinkedList(LinkedList *list, Node *oldNode, Node *newNode)
 {
-    insert(list, oldNode, newNode);
-    delete (list, oldNode);
+    insertIntoLinkedList(list, oldNode, newNode);
+    deleteFromLinkedList(list, oldNode);
 }
 
-Node *get(LinkedList *list, unsigned long long index)
+Node *getFromLinkedList(LinkedList *list, unsigned long long index)
 {
     Node *currentNode = list->head;
     for (unsigned long long i = 0; i < index && currentNode != NULL; i++)

@@ -10,38 +10,38 @@ struct Stack
 Stack *createStack()
 {
     Stack * stack = (Stack *)malloc(sizeof(Stack));
-    stack->list = create();
+    stack->list = createLinkedList();
     return stack;
 }
 
 void destroyStack(Stack *stack)
 {
-    destroy(stack->list);
+    destroyLinkedList(stack->list);
     free(stack);
 }
 
 int empty(Stack *stack)
 {
-    return getLength(stack->list) == 0;
+    return getLengthOfLinkedList(stack->list) == 0;
 }
 
 unsigned long long size(Stack *stack)
 {
-    return getLength(stack->list);
+    return getLengthOfLinkedList(stack->list);
 }
 
 int top(Stack *stack)
 {
-    return getData(getHead(stack->list));
+    return getDataOfNode(getHeadOfLinkedList(stack->list));
 }
 
 void pop(Stack *stack)
 {
-    delete (stack->list, getHead(stack->list));
+    deleteFromLinkedList(stack->list, getHeadOfLinkedList(stack->list));
 }
 
 void push(Stack *stack, int x)
 {
     Node *newNode = createNode(x);
-    insert(stack->list, NULL, newNode);
+    insertIntoLinkedList(stack->list, NULL, newNode);
 }

@@ -4,22 +4,22 @@
 
 int main()
 {
-    LinkedList *list = create();
+    LinkedList *list = createLinkedList();
     for (int i = 9; i >= 0; i--)
     {
         Node *newNode = createNode(i);
-        insert(list, NULL, newNode);
+        insertIntoLinkedList(list, NULL, newNode);
     }
     for (int i = 20; i < 30; i++)
     {
         Node *newNode = createNode(i);
-        insert(list, getRear(list), newNode);
+        insertIntoLinkedList(list, getRearOfLinkedList(list), newNode);
     }
-    Node *NodeWith9 = get(list, 9);
+    Node *NodeWith9 = getFromLinkedList(list, 9);
     for (int i = 19; i >= 10; i--)
     {
         Node *newNode = createNode(i);
-        insert(list, NodeWith9, newNode);
+        insertIntoLinkedList(list, NodeWith9, newNode);
     }
-    destroy(list);
+    destroyLinkedList(list);
 }

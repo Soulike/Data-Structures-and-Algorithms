@@ -7,18 +7,18 @@ typedef struct _Node Node;
 typedef struct _LinkedList LinkedList;
 
 Node *createNode(int data);
-int getData(Node *node);
-void setData(Node *node, int data);
-Node *getNext(Node *node);
+int getDataOfNode(Node *node);
+void setDataOfNode(Node *node, int data);
+Node *getNextOfNode(Node *node);
 
-LinkedList *create();           // 创建链表
-void destroy(LinkedList *list); // 销毁链表
-Node *getHead(LinkedList *list);
-Node *getRear(LinkedList *list);
-unsigned long long getLength(LinkedList *list);
-void insert(LinkedList *list, Node *nodeBefore, Node *newNode); // 插入新节点，如果 nodeBofore 是 NULL，插入到最前面
-void delete (LinkedList *list, Node *node);                     // 删除指定节点
-void replace(LinkedList *list, Node *oldNode, Node *newNode);   // 把指定旧节点替换为新节点
-Node *get(LinkedList *list, unsigned long long index);          // 获取第 index 个节点，如果超出长度返回 NULL
+LinkedList *createLinkedList(); // 创建链表
+void destroyLinkedList(LinkedList *list); // 销毁链表
+Node *getHeadOfLinkedList(LinkedList *list);
+Node *getRearOfLinkedList(LinkedList *list);
+unsigned long long getLengthOfLinkedList(LinkedList *list);
+void insertIntoLinkedList(LinkedList *list, Node *nodeBefore, Node *newNode); // 插入新节点，如果 nodeBofore 是 NULL，插入到最前面
+void deleteFromLinkedList(LinkedList *list, Node *node);                      // 删除指定节点
+void replaceFromLinkedList(LinkedList *list, Node *oldNode, Node *newNode);   // 把指定旧节点替换为新节点
+Node *getFromLinkedList(LinkedList *list, unsigned long long index);          // 获取第 index 个节点，如果超出长度返回 NULL
 
 #endif
