@@ -1,12 +1,40 @@
 #include "LinkedList.h"
 #include <stdlib.h>
 
+struct _Node // 节点类型
+{
+    int data;
+    struct _Node *next;
+};
+
+struct _LinkedList // 链表类型
+{
+    Node *head;                // 头节点
+    Node *rear;                // 尾节点
+    unsigned long long length; // 当前链表长度
+};
+
 Node *createNode(int data)
 {
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
+}
+
+int getData(Node *node)
+{
+    return node->data;
+}
+
+void setData(Node *node, int data)
+{
+    node->data = data;
+}
+
+Node *getNext(Node *node)
+{
+    return node->next;
 }
 
 LinkedList *create()
@@ -31,6 +59,21 @@ void destroy(LinkedList *list)
     free(list);
 }
 
+Node *getHead(LinkedList *list)
+{
+    return list->head;
+}
+
+Node *getRear(LinkedList *list)
+{
+    return list->rear;
+}
+
+unsigned long long getLength(LinkedList *list)
+{
+    return list->length;
+}
+
 void insert(LinkedList *list, Node *nodeBefore, Node *newNode)
 {
     if (nodeBefore == NULL) // 如果之前参照节点是 NULL，就插入成为 head
@@ -51,7 +94,7 @@ void insert(LinkedList *list, Node *nodeBefore, Node *newNode)
     list->length++;
 }
 
-void delete(LinkedList *list, Node *node)
+void delete (LinkedList *list, Node *node)
 {
     if (node == list->head)
     {
@@ -82,7 +125,7 @@ void delete(LinkedList *list, Node *node)
 void replace(LinkedList *list, Node *oldNode, Node *newNode)
 {
     insert(list, oldNode, newNode);
-    delete(list, oldNode);
+    delete (list, oldNode);
 }
 
 Node *get(LinkedList *list, unsigned long long index)

@@ -1,11 +1,7 @@
 #ifndef STACK_H
 #define STACK_H
-#include "LinkedList.h"
 
-struct Stack
-{
-    LinkedList *list;
-};
+struct Stack;
 
 typedef struct Stack Stack;
 
