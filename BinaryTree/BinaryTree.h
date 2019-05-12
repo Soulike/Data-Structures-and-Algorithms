@@ -1,16 +1,18 @@
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
 
+typedef int dataTypeInTreeNode;
+
 struct TreeNode;
 typedef struct TreeNode TreeNode;
 
-TreeNode *createTreeNode(int data);
+TreeNode *createTreeNode(dataTypeInTreeNode data);
 TreeNode *getLeftTreeNode(TreeNode *treeNode);
 TreeNode *getRightTreeNode(TreeNode *treeNode);
 void setLeftTreeNode(TreeNode *treeNode, TreeNode *leftTreeNode);
 void setRightTreeNode(TreeNode *treeNode, TreeNode *rightTreeNode);
-int getDataOfTreeNode(TreeNode *treeNode);
-void setDataOfTreeNode(TreeNode *treeNode,int data);
+dataTypeInTreeNode getDataOfTreeNode(TreeNode *treeNode);
+void setDataOfTreeNode(TreeNode *treeNode, dataTypeInTreeNode data);
 
 struct BinaryTree;
 typedef struct BinaryTree BinaryTree;
@@ -28,5 +30,14 @@ void setRootTreeNode(BinaryTree *binaryTree,TreeNode *treeNode);
 
 // 层次遍历输出 data
 void levelOrderPrint(BinaryTree *binaryTree);
+
+// 前序遍历输出 data
+void frontOrderPrint(BinaryTree *binaryTree);
+
+// 中序遍历输出 data
+void midOrderPrint(BinaryTree *binaryTree);
+
+// 后序遍历输出 data
+void backOrderPrint(BinaryTree *binaryTree);
 
 #endif

@@ -1,10 +1,11 @@
 #ifndef QUEUE_H
 #define QUEUE_H
+#include "BinaryTree.h"
 
 struct _Queue;
 
 typedef struct _Queue Queue;
-typedef int dataTypeInQueue; // 所容纳数据类型，根据需要修改
+typedef TreeNode *dataTypeInQueue; // 所容纳数据类型，根据需要修改
 
 Queue *createQueue();
 void destroyQueue(Queue *);

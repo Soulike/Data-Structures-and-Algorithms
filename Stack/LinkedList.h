@@ -6,12 +6,14 @@ struct _LinkedList;
 typedef struct _Node Node;
 typedef struct _LinkedList LinkedList;
 
-Node *createNode(int data);
-int getDataOfNode(Node *node);
-void setDataOfNode(Node *node, int data);
+typedef int dataTypeInLinkedList; // 所容纳数据类型，根据需要修改
+
+Node *createNode(dataTypeInLinkedList data);
+dataTypeInLinkedList getDataOfNode(Node *node);
+void setDataOfNode(Node *node, dataTypeInLinkedList data);
 Node *getNextOfNode(Node *node);
 
-LinkedList *createLinkedList(); // 创建链表
+LinkedList *createLinkedList();           // 创建链表
 void destroyLinkedList(LinkedList *list); // 销毁链表
 Node *getHeadOfLinkedList(LinkedList *list);
 Node *getRearOfLinkedList(LinkedList *list);

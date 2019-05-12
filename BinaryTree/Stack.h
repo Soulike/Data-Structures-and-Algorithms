@@ -1,11 +1,12 @@
 #ifndef STACK_H
 #define STACK_H
+#include "BinaryTree.h"
 
 struct Stack;
 
 typedef struct Stack Stack;
 
-typedef int dataTypeInStack;
+typedef TreeNode *dataTypeInStack;
 
 Stack *createStack();
 void destroyStack(Stack *stack);

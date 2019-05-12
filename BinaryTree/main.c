@@ -3,8 +3,8 @@
 
 int main()
 {
-    TreeNode *treeNodeArray[7];
-    for (int i = 0; i < 7; i++)
+    TreeNode *treeNodeArray[8];
+    for (int i = 0; i < 8; i++)
     {
         treeNodeArray[i] = createTreeNode(i + 1);
     }
@@ -15,12 +15,17 @@ int main()
     setRightTreeNode(treeNodeArray[1], treeNodeArray[4]);
     setRightTreeNode(treeNodeArray[2], treeNodeArray[5]);
     setLeftTreeNode(treeNodeArray[3], treeNodeArray[6]);
-    
+    setLeftTreeNode(treeNodeArray[5], treeNodeArray[7]);
+
     BinaryTree *binaryTree = createBinaryTree();
     setRootTreeNode(binaryTree, treeNodeArray[0]);
-    printf("%lld", height(binaryTree));
 
     BinaryTree *binaryTreeCopy = cloneBinaryTree(binaryTree);
+
+    //levelOrderPrint(binaryTree);
+    //frontOrderPrint(binaryTree);
+    //midOrderPrint(binaryTree);
+    backOrderPrint(binaryTree);
 
     destroyBinaryTree(binaryTree);
     destroyBinaryTree(binaryTreeCopy);

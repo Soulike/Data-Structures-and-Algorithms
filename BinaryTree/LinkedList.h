@@ -1,19 +1,20 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
+#include "BinaryTree.h"
 
 struct _Node;
 struct _LinkedList;
 typedef struct _Node Node;
 typedef struct _LinkedList LinkedList;
 
-typedef int dataTypeInLinkedList;   // 所容纳数据类型，根据需要修改
+typedef TreeNode *dataTypeInLinkedList; // 所容纳数据类型，根据需要修改
 
 Node *createNode(dataTypeInLinkedList data);
 dataTypeInLinkedList getDataOfNode(Node *node);
 void setDataOfNode(Node *node, dataTypeInLinkedList data);
 Node *getNextOfNode(Node *node);
 
-LinkedList *createLinkedList(); // 创建链表
+LinkedList *createLinkedList();           // 创建链表
 void destroyLinkedList(LinkedList *list); // 销毁链表
 Node *getHeadOfLinkedList(LinkedList *list);
 Node *getRearOfLinkedList(LinkedList *list);

@@ -3,7 +3,7 @@
 
 struct _Node // 节点类型
 {
-    int data;
+    dataTypeInLinkedList data;
     struct _Node *next;
 };
 
@@ -14,7 +14,7 @@ struct _LinkedList // 链表类型
     unsigned long long length; // 当前链表长度
 };
 
-Node *createNode(int data)
+Node *createNode(dataTypeInLinkedList data)
 {
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = data;
@@ -22,12 +22,12 @@ Node *createNode(int data)
     return newNode;
 }
 
-int getDataOfNode(Node *node)
+dataTypeInLinkedList getDataOfNode(Node *node)
 {
     return node->data;
 }
 
-void setDataOfNode(Node *node, int data)
+void setDataOfNode(Node *node, dataTypeInLinkedList data)
 {
     node->data = data;
 }
@@ -101,6 +101,10 @@ void deleteFromLinkedList(LinkedList *list, Node *node)
         list->head = node->next;
         free(node);
         list->length--;
+        if (list->head == NULL)
+        {
+            list->rear = NULL;
+        }
     }
     else
     {
