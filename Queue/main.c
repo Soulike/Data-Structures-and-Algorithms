@@ -6,11 +6,11 @@ int main()
     Queue *queue = createQueue();
     for (int i = 0; i < 10; i++)
     {
-        push(queue, i);
+        pushIntoQueue(queue, i);
     }
-    while (!empty(queue))
+    while (!queueIsEmpty(queue))
     {
-        printf("%d, %d\n", front(queue), back(queue));
-        pop(queue);
+        printf("%d, %d\n", getFrontOfQueue(queue), getBackOfQueue(queue));
+        popFromQueue(queue);
     }
 }

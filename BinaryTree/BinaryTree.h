@@ -26,4 +26,7 @@ BinaryTree *createBinaryTreeByRootTreeNode(TreeNode *treeNode);
 TreeNode *getRootTreeNode(BinaryTree *binaryTree);
 void setRootTreeNode(BinaryTree *binaryTree,TreeNode *treeNode);
 
+// 层次遍历输出 data
+void levelOrderPrint(BinaryTree *binaryTree);
+
 #endif

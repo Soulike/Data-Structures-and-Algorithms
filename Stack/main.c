@@ -6,12 +6,12 @@ int main()
     Stack *stack = createStack();
     for (int i = 0; i < 10;i++)
     {
-        push(stack, i);
+        pushIntoStack(stack, i);
     }
     for (int i = 0; i < 5;i++)
     {
-        printf("%d", top(stack));
-        pop(stack);
+        printf("%d", getTopOfStack(stack));
+        popFromStack(stack);
     }
     destroyStack(stack);
 }

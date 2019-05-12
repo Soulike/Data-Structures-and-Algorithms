@@ -20,32 +20,32 @@ void destroyQueue(Queue *queue)
     free(queue);
 }
 
-int empty(Queue *queue)
+int queueIsEmpty(Queue *queue)
 {
     return getLengthOfLinkedList(queue->list) == 0;
 }
 
-unsigned long long size(Queue *queue)
+unsigned long long getSizeOfQueue(Queue *queue)
 {
     return getLengthOfLinkedList(queue->list);
 }
 
-int front(Queue *queue)
+int getFrontOfQueue(Queue *queue)
 {
     return getDataOfNode(getHeadOfLinkedList(queue->list));
 }
 
-int back(Queue *queue)
+int getBackOfQueue(Queue *queue)
 {
     return getDataOfNode(getRearOfLinkedList(queue->list));
 }
 
-void pop(Queue *queue)
+void popFromQueue(Queue *queue)
 {
     deleteFromLinkedList(queue->list, getHeadOfLinkedList(queue->list));
 }
 
-void push(Queue *queue, int x)
+void pushIntoQueue(Queue *queue, int x)
 {
     insertIntoLinkedList(queue->list, getRearOfLinkedList(queue->list), createNode(x));
 }

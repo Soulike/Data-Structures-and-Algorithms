@@ -20,27 +20,27 @@ void destroyStack(Stack *stack)
     free(stack);
 }
 
-int empty(Stack *stack)
+int stackIsEmpty(Stack *stack)
 {
     return getLengthOfLinkedList(stack->list) == 0;
 }
 
-unsigned long long size(Stack *stack)
+unsigned long long getStackSize(Stack *stack)
 {
     return getLengthOfLinkedList(stack->list);
 }
 
-int top(Stack *stack)
+int getTopOfStack(Stack *stack)
 {
     return getDataOfNode(getHeadOfLinkedList(stack->list));
 }
 
-void pop(Stack *stack)
+void popFromStack(Stack *stack)
 {
     deleteFromLinkedList(stack->list, getHeadOfLinkedList(stack->list));
 }
 
-void push(Stack *stack, int x)
+void pushIntoStack(Stack *stack, int x)
 {
     Node *newNode = createNode(x);
     insertIntoLinkedList(stack->list, NULL, newNode);
