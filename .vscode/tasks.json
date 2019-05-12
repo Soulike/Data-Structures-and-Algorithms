@@ -3,9 +3,9 @@
         {
             "type": "shell",
             "label": "build",
-            "command": "clang",
+            "command": "clang++",
             "args": [
-                "*.c",
+                "*.cpp",
                 "-Wall",
                 "-g",
                 "-o",
@@ -14,7 +14,7 @@
             "windows": {
                 "command": "g++",
                 "args": [
-                    "*.c",
+                    "*.cpp",
                     "-Wall",
                     "-g",
                     "-o",

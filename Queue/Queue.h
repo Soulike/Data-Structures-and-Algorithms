@@ -1,18 +1,60 @@
 #ifndef QUEUE_H
 #define QUEUE_H
+#include "AbstractQueue.h"
+#include "SinglyLinkedList.h"
 
-struct _Queue;
+template <class T>
+class Queue
+{
+private:
+    LinearList<T> *container;
 
-typedef struct _Queue Queue;
-typedef int dataTypeInQueue; // 所容纳数据类型，根据需要修改
+public:
+    Queue()
+    {
+        this->container = new SinglyLinkedList<T>();
+    }
 
-Queue *createQueue();
-void destroyQueue(Queue *);
-int queueIsEmpty(Queue *);
-unsigned long long getSizeOfQueue(Queue *);
-dataTypeInQueue getFrontOfQueue(Queue *);
-dataTypeInQueue getBackOfQueue(Queue *);
-void popFromQueue(Queue *);
-void pushIntoQueue(Queue *, dataTypeInQueue x);
+    ~Queue()
+    {
+        delete this->container;
+    }
+
+    bool empty() const
+    {
+        return this->container->empty();
+    }
+
+    size_t size() const
+    {
+        return this->container->size();
+    }
+
+    T front() const
+    {
+        return this->container->get(0);
+    }
+
+    T back() const
+    {
+        return this->container->get(this->container->size() - 1);
+    }
+
+    void pop()
+    {
+        this->container->erase(0);
+    }
+
+    void push(T value)
+    {
+        this->container->insert(this->container->size(), value);
+    }
+    Queue<T> *clone() const
+    {
+        Queue<T> *newQueue = new Queue<T>();
+        newQueue->container = this->container->clone();
+        return newQueue;
+    }
+};
 
 #endif
