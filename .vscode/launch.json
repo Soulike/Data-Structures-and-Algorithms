@@ -8,12 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/build/${fileBasenameNoExtension}.out",
-            "windows": {
-                "program": "${fileDirname}/build/${fileBasenameNoExtension}.exe",
-                "miDebuggerPath": "gdb.exe",
-                "externalConsole": true
-            },
+            "program": "${fileDirname}/${fileBasenameNoExtension}.out",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

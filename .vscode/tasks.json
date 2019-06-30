@@ -6,21 +6,12 @@
             "command": "clang++",
             "args": [
                 "*.cpp",
+                "-lm",
                 "-Wall",
                 "-g",
                 "-o",
-                "build/${fileBasenameNoExtension}.out"
+                "${fileBasenameNoExtension}.out"
             ],
-            "windows": {
-                "command": "g++",
-                "args": [
-                    "*.cpp",
-                    "-Wall",
-                    "-g",
-                    "-o",
-                    "build/${fileBasenameNoExtension}.exe"
-                ],
-            },
             "options": {
                 "cwd": "${fileDirname}"
             },
@@ -41,10 +32,7 @@
             "label": "run",
             "type": "process",
             "dependsOn": "build",
-            "command": "build/${fileBasenameNoExtension}.out",
-            "windows": {
-                "command": "build/${fileBasenameNoExtension}.exe",
-            },
+            "command": "${fileBasenameNoExtension}.out",
             "options": {
                 "cwd": "${fileDirname}"
             },
